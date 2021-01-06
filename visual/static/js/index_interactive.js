@@ -283,6 +283,15 @@ function getCardStateArray(backEndState, perspective=false){
     return card_state;
 }
 
+function properTrumpSuitName(suit) {
+    const suits = {
+        c: 'Clubs',
+        d: 'Diamonds',
+        h: 'Hearts',
+        s: 'Spades',
+    };
+    return suits[suit.toLowerCase()];
+}
 
 function getMoveTypes(moves){
 
