@@ -122,6 +122,10 @@ function orderCards(visualDeck, stock, trump_suit){
         trump_jack_index = 19;
     }
 
+
+    $("#trump").show();
+    $("#trump .suitType").text(properTrumpSuitName(trump_suit));
+
     new_cards_array.push(visualDeck.backEndIndices[trump_jack_index]);
 
     stock.forEach(function(stockIndex){
@@ -154,6 +158,16 @@ function orderCards(visualDeck, stock, trump_suit){
         card.$el.style.zIndex = card.pos;
     });
 
+}
+
+function properTrumpSuitName(suit) {
+    const suits = {
+        c: 'Clubs',
+        d: 'Diamonds',
+        h: 'Hearts',
+        s: 'Spades',
+    };
+    return suits[suit.toLowerCase()];
 }
 
 function arrangeCards(visualDeck, backEndState){
@@ -267,6 +281,16 @@ function getCardStateArray(backEndState, perspective=false){
         }
     }
     return card_state;
+}
+
+function properTrumpSuitName(suit) {
+    const suits = {
+        c: 'Clubs',
+        d: 'Diamonds',
+        h: 'Hearts',
+        s: 'Spades',
+    };
+    return suits[suit.toLowerCase()];
 }
 
 function getMoveTypes(moves){
